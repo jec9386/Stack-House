@@ -1,3 +1,5 @@
+package com.pluralsight;
+
 public enum Cheese {
     AMERICAN("American"),
     PROVOLONE("Provolone"),

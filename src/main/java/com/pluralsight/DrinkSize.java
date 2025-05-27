@@ -1,22 +1,28 @@
-public enum DrinkSize {
-    SMALL("Small", 2.00),
-    MEDIUM("Medium", 2.50),
-    LARGE("Large", 3.00);
+package com.pluralsight;
+
+enum DrinkSize {
+    SMALL("Small", 0),
+    MEDIUM("Medium", 1),
+    LARGE("Large", 2);
 
     private final String display;
-    private final double price;
+    private final int priceIndex;
 
-    DrinkSize(String display, double price) {
+    DrinkSize(String display, int priceIndex) {
         this.display = display;
-        this.price = price;
+        this.priceIndex = priceIndex;
     }
 
     public String getDisplay() {
         return display;
     }
 
-    public double getPrice() {
-        return price;
+    public int getPriceIndex() {
+        return priceIndex;
+    }
+
+    @Override
+    public String toString() {
+        return display;
     }
 }
-

@@ -1,3 +1,5 @@
+package com.pluralsight;
+
 public enum Sauce {
     MAYO("Mayo"),
     MUSTARD("Mustard"),

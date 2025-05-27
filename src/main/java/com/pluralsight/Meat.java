@@ -1,3 +1,5 @@
+package com.pluralsight;
+
 public enum Meat {
     STEAK("Steak"),
     HAM("Ham"),
@@ -27,5 +29,9 @@ public enum Meat {
     public double getExtraPrice(SandwichSize size) {
         double[] extraPrices = {0.50, 1.00, 1.50}; // 4", 8", 12"
         return extraPrices[size.getPriceIndex()];
+    }
+
+    public void displayMeats(){
+
     }
 }

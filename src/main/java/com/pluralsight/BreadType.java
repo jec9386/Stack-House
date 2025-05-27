@@ -1,3 +1,5 @@
+package com.pluralsight;
+
 public enum BreadType {
     WHITE("White"),
     WHEAT("Wheat"),

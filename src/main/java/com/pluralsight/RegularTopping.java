@@ -1,3 +1,5 @@
+package com.pluralsight;
+
 public enum RegularTopping {
     LETTUCE("Lettuce"),
     PEPPERS("Peppers"),

@@ -1,3 +1,5 @@
+package com.pluralsight;
+
 public enum SandwichSize {
     FOUR_INCH("4\"", 0),
     EIGHT_INCH("8\"", 1),
@@ -6,7 +8,7 @@ public enum SandwichSize {
     private final String display;
     private final int priceIndex;
 
-    SandwichSize(String display, int priceIndex) {
+   SandwichSize(String display, int priceIndex) {
         this.display = display;
         this.priceIndex = priceIndex;
     }
