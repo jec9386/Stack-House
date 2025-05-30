@@ -118,7 +118,7 @@ Complete the order and generate receipt file.
 ![Sample Receipt](images/Screenshot%202025-05-30%20061104.png)
 
 ## Development Process(DIAGRAM)
-![Development Diagram](images/Screenshot%202025-05-30%20060736.png)
+![Development Diagram](images/diagram%20capstone%202.png)
 
 
 ## Code Structure
