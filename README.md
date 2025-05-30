@@ -9,7 +9,7 @@ A Java console application that simulates a sandwich shop's, point-of-sale syste
 - [Usage](#usage)
 - [Development Process](#development-process)
 - [Code Structure](#code-structure)
-- [Contributing](#contributing)
+
 
 ## Features
 
