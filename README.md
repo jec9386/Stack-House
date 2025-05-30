@@ -131,14 +131,17 @@ src/
 │   └── DrinkType.java
 ├── classes/
 │   ├── Sandwich.java
+│   ├── BLTSandwich.java
+│   ├── PhillyCheeseSteak.java
+│   ├── VeggieSandwich.java
+│   ├── SignatureSandwich.java
+│   ├── SignatureSandwichManager.java
 │   ├── Drink.java
-│   └── CompleteOrder.java
-├── ui/
-│   └── DeliApp.java
-└── tests/
-    ├── SandwichTest.java
-    ├── CompleteOrderTest.java
-    └── DeliAppTest.java
+│   ├── Order.java
+│   ├── ReceiptManager.java
+│   └── Interface.java
+└── ui/
+    └── Interface.java
 ```
 
 ## License
