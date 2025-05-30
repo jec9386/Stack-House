@@ -150,6 +150,13 @@ src/
     └── Interface.java
 ```
 
+## Interesting piece of code
+
+![Interesting Code](images/Screenshot%202025-05-30%20073407.png)
+
+
+The most interesting aspect of this application is the **SignatureSandwich inheritance hierarchy**, which demonstrates strategic use of abstract classes and polymorphism. The `SignatureSandwich` abstract class extends the base `Sandwich` class, creating a specialized framework for predefined sandwich recipes like `BLTSandwich`, `PhillyCheeseSteak`, and `VeggieSandwich`. This inheritance structure allows each signature sandwich to automatically inherit core functionality (pricing calculations, topping management, size handling) from the parent `Sandwich` class while adding their own unique identity through `signatureName` and `description` fields.
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
