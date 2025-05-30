@@ -87,22 +87,10 @@ A Java console application that simulates a sandwich shop's, point-of-sale syste
 - Any Java IDE (IntelliJ IDEA, Eclipse, VS Code)
 
 
-=================================
-  WELCOME TO JAVA DELI EXPRESS  
-=================================
 
-========== MAIN MENU ==========
-1. Start New Order
-2. Add Sandwich
-3. Add Chips
-4. Add Drink
-5. View Current Order
-6. Checkout
-7. Exit
-===============================
-```
 
 ### Creating an Order
+![Alt Text](images/Screenshot 2025-05-30 060852.png)
 1. **Start New Order** - Enter customer name
 2. **Build Sandwich** - Choose size, bread, and toppings with guided prompts
 3. **Add Chips** - Select from available varieties
@@ -111,30 +99,12 @@ A Java console application that simulates a sandwich shop's, point-of-sale syste
 6. **Checkout** - Complete the order
 
 ### Sample Receipt
-```
-=== RECEIPT FOR JOHN SMITH ===
 
-SANDWICHES:
-  1. 8" Wheat sandwich (Toasted) - $12.50
 
-CHIPS:
-  1. Takis Fuego - $1.50
+## Development Process (Diagram)
 
-DRINKS:
-  1. Large Fresh Milk - $3.00
 
-========================================
-TOTAL ORDER: $17.00
-```
 
-## Development Process
-
-1. **Foundation** - Requirements analysis and OOP design
-2. **Sandwich System** - Most complex component first
-3. **Simple Items** - Chips and drinks with lessons learned
-4. **Order Management** - Integration of all systems
-5. **User Interface** - Interactive menu and user experience
-6. **Testing and Polish** - End-to-end testing and refinement
 
 ## Code Structure
 
