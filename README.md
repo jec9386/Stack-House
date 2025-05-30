@@ -101,6 +101,13 @@ Enter customer name to begin the ordering process.
 ### 2. Build Sandwich
 Choose size, bread, and toppings with guided prompts through our intuitive interface.
 
+![Sandwich Building](images/Screenshot%202025-05-30%20061009.png)
+
+![Sandwich Building](images/Screenshot%202025-05-30%20061023.png)
+
+![Sandwich Building](images/Screenshot%202025-05-30%20061038.png)
+
+
 ### 3. Review Order
 View detailed receipt with itemized pricing and order summary.
 
