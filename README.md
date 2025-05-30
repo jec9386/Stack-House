@@ -16,7 +16,7 @@ A Java console application that simulates a sandwich shop's- point-of-sale syste
 ### Sandwich Customization
 - **3 sizes:** 4", 8", 12" with size-based pricing
 - **4 bread types:** White, Wheat, Rye, Wrap
-- **Premium meats:** Steak, Ham, Chicken, Bacon with size-specific pricing
+- **Premium meats:** Steak, Ham, Salami, Chicken, Bacon with size-specific pricing
 - **Cheese options:** American, Provolone, Cheddar, Swiss
 - **Free toppings:** Lettuce, tomatoes, onions, pickles, and more
 - **Sauces:** Mayo, mustard, ketchup, ranch, and others
