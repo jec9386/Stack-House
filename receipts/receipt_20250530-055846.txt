@@ -1,0 +1,23 @@
+=====================================
+           STACK HOUSE
+         Fresh Sandwiches
+=====================================
+
+Date: May 30, 2025  05:58 AM
+Customer: tom
+
+ORDER DETAILS:
+-------------------------------------
+1. Custom- 8" Wheat Bread  (Toasted)
+Meats: Bacon
+Cheese: Swiss
+
+   Price: $10.50
+
+-------------------------------------
+TOTAL:    $10.50
+
+=====================================
+      Thank you for visiting!
+        Stack House 
+=====================================

@@ -1,0 +1,23 @@
+=====================================
+           STACK HOUSE
+         Fresh Sandwiches
+=====================================
+
+Date: May 30, 2025  05:29 AM
+Customer: tom
+
+ORDER DETAILS:
+-------------------------------------
+1. Medium Lactaid- Whole Milk
+   Price: $2.50
+
+2. LAY'S Ketchup
+   Price: $1.50
+
+-------------------------------------
+TOTAL:    $4.00
+
+=====================================
+      Thank you for visiting!
+        Stack House 
+=====================================

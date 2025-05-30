@@ -582,14 +582,30 @@ public class Interface {
     private static void checkout() {
 
 
-        System.out.println("\n=== CHECKOUT ===");
-
         for (int i = 0; i < currentOrder.getSandwiches().size(); i++) {
             Sandwich sandwich = currentOrder.getSandwiches().get(i);
             System.out.println((i + 1) + ". " + sandwich.getDetailedDescription());
             System.out.println("   Price: $" + String.format("%.2f", sandwich.getPrice()));
             System.out.println();
         }
+
+        for (int i = 0; i < currentOrder.getDrinks().size(); i++) {
+            Drink drink = currentOrder.getDrinks().get(i);
+            System.out.println((i + 1) + ". " + drink.getDescription());
+            System.out.println("   Price: $" + String.format("%.2f", drink.getPrice()));
+            System.out.println();
+        }
+
+        for (int i = 0; i < currentOrder.getChips().size(); i++) {
+            Chips chips = currentOrder.getChips().get(i);
+            System.out.println((i + 1) + ". " + chips.getDescription());
+            System.out.println("   Price: $" + String.format("%.2f", chips.getPrice()));
+            System.out.println();
+        }
+
+        System.out.println("==========================================");
+        System.out.println("TOTAL: $" + String.format("%.2f", currentOrder.getTotalPrice()));
+        System.out.println("==========================================");
 
         boolean confirm = Console.promptForYesNo("Confirm order?");
 

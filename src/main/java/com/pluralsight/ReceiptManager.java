@@ -16,7 +16,7 @@ public class ReceiptManager {
             LocalDateTime now = LocalDateTime.now();
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
             String timestamp = now.format(formatter);
-            String filename ="receipt_"+ timestamp + ".txt";
+            String filename ="receipts/receipt_"+ timestamp + ".txt";
 
             // Create the receipt content
             String receiptContent = createReceiptContent(order);
@@ -26,6 +26,7 @@ public class ReceiptManager {
             writer.write(receiptContent);
             writer.close();
 
+
             System.out.println("Receipt saved as: " + filename);
             return filename;
 
@@ -34,6 +35,7 @@ public class ReceiptManager {
             return null;
         }
     }
+
 
     // Create the receipt content as a string
     private static String createReceiptContent(Order order) {
