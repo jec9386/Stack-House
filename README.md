@@ -117,7 +117,7 @@ Complete the order and generate receipt file.
 ## Sample Receipt
 ![Sample Receipt](images/Screenshot%202025-05-30%20061104.png)
 
-## Development Process
+## Development Process(DIAGRAM)
 ![Development Diagram](images/Screenshot%202025-05-30%20060736.png)
 
 
