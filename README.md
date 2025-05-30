@@ -28,7 +28,7 @@ A Java console application that simulates a sandwich shop's- point-of-sale syste
 
 ### Beverages
 - **3 sizes:** Small ($2.00), Medium ($2.50), Large ($3.00)
-- **8 drink types:** Water, Pepsi, fresh milk, almond milk, and more
+- **drink types:** Water, fresh milk, almond milk, and more
 - Size-based pricing system
 
 ### Order Management
