@@ -1,6 +1,6 @@
 # Stack House - Sandwich Ordering System
 
-A Java console application that simulates a sandwich shop's, point-of-sale system. Customers can build custom sandwiches with multiple toppings, select chips and drinks, and receive detailed receipts with calculated totals.
+A Java console application that simulates a sandwich shop's- point-of-sale system. Customers can build custom sandwiches with multiple toppings, select chips and drinks, and receive detailed receipts with calculated totals.
 
 ## Table of Contents
 - [Features](#features)
