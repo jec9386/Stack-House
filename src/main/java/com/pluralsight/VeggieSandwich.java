@@ -1,10 +1,9 @@
 package com.pluralsight;
 
-public class Veggielicious extends SignatureSandwich {
+public class VeggieSandwich extends SignatureSandwich {
 
-    public Veggielicious() {
-        super("Veggie Deluxe", "Fresh local bought vegetables with fresh cheese");
-        // Change to wheat bread for healthier option
+    public VeggieSandwich() {
+        super("Veggielicious", "Fresh vegetables with cheese");
     }
 
     @Override
