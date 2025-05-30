@@ -90,7 +90,7 @@ A Java console application that simulates a sandwich shop's, point-of-sale syste
 
 
 ### Creating an Order
-![Alt Text](images/Screenshot 2025-05-30 060852.png)
+![Screenshot](images/Screenshot%202025-05-30%20060852.png)
 1. **Start New Order** - Enter customer name
 2. **Build Sandwich** - Choose size, bread, and toppings with guided prompts
 3. **Add Chips** - Select from available varieties
