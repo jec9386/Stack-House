@@ -1,6 +1,9 @@
 package com.pluralsight;
 
-public enum SandwichSize {
+public enum SandwichSize implements Displayable {
+
+    //create Finalized Constants
+    //these are pre-made objects, automatically calls constructor behind the scene when called
     FOUR_INCH("4\"", 0),
     EIGHT_INCH("8\"", 1),
     TWELVE_INCH("12\"", 2);

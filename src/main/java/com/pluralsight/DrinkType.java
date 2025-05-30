@@ -12,10 +12,13 @@ enum DrinkType {
 
     private final String display;
 
+    //---Constructor------------------------------------
     DrinkType(String display) {
         this.display = display;
     }
 
+
+    //---Getter--------------------------------------------
     public String getDisplay() {
         return display;
     }

@@ -1,6 +1,6 @@
 package com.pluralsight;
 
-class Drink {
+class Drink implements Displayable {
     private DrinkSize size;
     private DrinkType type;
 
@@ -12,6 +12,7 @@ class Drink {
         this.type = type;
     }
 
+    //---Getter--------------------------------------------
     public DrinkSize getSize() {
         return size;
     }
@@ -26,6 +27,11 @@ class Drink {
 
     public String getDisplay() {
         return size.getDisplay() + " " + type.getDisplay();
+    }
+
+
+    public String getDescription() {
+        return Formatter.getDescription(this);
     }
 
     @Override

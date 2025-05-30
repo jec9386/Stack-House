@@ -1,6 +1,6 @@
 package com.pluralsight;
 
-public enum Meat {
+public enum Meat implements Displayable {
     STEAK("Steak"),
     HAM("Ham"),
     SALAMI("Salami"),
@@ -21,9 +21,10 @@ public enum Meat {
         return display;
     }
 
+    //method to calculate price of meat based on sandwich size
     public double getPrice(SandwichSize size) {
         double[] prices = {1.00, 2.00, 3.00}; // 4", 8", 12"
-        return prices[size.getPriceIndex()];
+        return prices[size.getPriceIndex()];//get price index of sandwich to match up with appropriate meat price.
     }
 
     public double getExtraPrice(SandwichSize size) {

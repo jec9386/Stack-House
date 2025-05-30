@@ -1,6 +1,6 @@
 package com.pluralsight;
 
-public enum Cheese {
+public enum Cheese implements Displayable{
     AMERICAN("American"),
     PROVOLONE("Provolone"),
     CHEDDAR("Cheddar"),
@@ -8,10 +8,12 @@ public enum Cheese {
 
     private final String display;
 
+    //---Constructor------------------------------------
     Cheese(String display) {
         this.display = display;
     }
 
+    //---Getter--------------------------------------------
     public String getDisplay() {
         return display;
     }

@@ -41,7 +41,7 @@ public class Order {
         return drinks.remove(drink);
     }
 
-    // Get counts
+    // Get items in list
     public int getSandwichCount() {
         return sandwiches.size();
     }
@@ -58,7 +58,7 @@ public class Order {
         return getSandwichCount() + getChipsCount() + getDrinkCount();
     }
 
-    // Calculate prices
+    // Calculate total prices for each List
     public double getSandwichTotal() {
         double total = 0.0;
         for (Sandwich sandwich : sandwiches) {
@@ -87,7 +87,7 @@ public class Order {
         return getSandwichTotal() + getChipsTotal() + getDrinksTotal();
     }
 
-    // Utility methods
+    // Customer methods
     public String getCustomerName() {
         return customerName;
     }
@@ -96,11 +96,11 @@ public class Order {
         this.customerName = customerName;
     }
 
-    public boolean isEmpty() {
+    public boolean isEmpty() {//determines if there are items
         return getTotalItemCount() == 0;
     }
 
-    public void clearOrder() {
+    public void clearOrder() {//for start over or cancel item- deletes items in the List
         sandwiches.clear();
         chips.clear();
         drinks.clear();
@@ -119,72 +119,70 @@ public class Order {
         return new ArrayList<>(drinks);
     }
 
-    // Order summary
     public String getOrderSummary() {
-        if (isEmpty()) {
-            return "No items in order.";
-        }
-
-        StringBuilder summary = new StringBuilder();
-        summary.append("Order for: ").append(customerName).append("\n");
-        summary.append("Items: ").append(getTotalItemCount()).append(" item(s) ");
-        summary.append("(").append(getSandwichCount()).append(" sandwich(es), ");
-        summary.append(getChipsCount()).append(" chips, ");
-        summary.append(getDrinkCount()).append(" drink(s))").append("\n");
-        summary.append("Total: $").append(String.format("%.2f", getTotalPrice()));
-
-        return summary.toString();
+        return Formatter.getOrderSummary(this);
     }
 
-    // Detailed receipt
-    public String getDetailedReceipt() {
+    // Order confirmation
+    public String getOrderConfirmation() {
         if (isEmpty()) {
-            return "No items in order.";
+            return "Your cart is empty.";
         }
 
-        StringBuilder receipt = new StringBuilder();
-        receipt.append("=== RECEIPT FOR ").append(customerName.toUpperCase()).append(" ===\n\n");
+        StringBuilder confirmation = new StringBuilder();
+        confirmation.append("========== ORDER CONFIRMATION ==========\n");
+        confirmation.append("Customer: ").append(customerName).append("\n\n");
 
-        // Sandwiches section
+        // Show detailed breakdown of each item type
         if (!sandwiches.isEmpty()) {
-            receipt.append("SANDWICHES:\n");
+            confirmation.append("SANDWICHES:\n");
             for (int i = 0; i < sandwiches.size(); i++) {
-                receipt.append("  ").append(i + 1).append(". ");
-                receipt.append(sandwiches.get(i).getDescription());
-                receipt.append(" - $").append(String.format("%.2f", sandwiches.get(i).getPrice()));
-                receipt.append("\n");
+                confirmation.append("  ").append(i + 1).append(". ");
+                confirmation.append(sandwiches.get(i).getDetailedDescription()); // Full sandwich details
+                confirmation.append("     Price: $").append(String.format("%.2f", sandwiches.get(i).getPrice()));
+                confirmation.append("\n\n");
             }
-            receipt.append("Sandwich subtotal: $").append(String.format("%.2f", getSandwichTotal())).append("\n\n");
+            confirmation.append("Sandwiches subtotal: $").append(String.format("%.2f", getSandwichTotal())).append("\n\n");
         }
 
-        // Chips section
         if (!chips.isEmpty()) {
-            receipt.append("CHIPS:\n");
+            confirmation.append("CHIPS:\n");
             for (int i = 0; i < chips.size(); i++) {
-                receipt.append("  ").append(i + 1).append(". ");
-                receipt.append(chips.get(i).getDisplay());
-                receipt.append(" - $").append(String.format("%.2f", chips.get(i).getPrice()));
-                receipt.append("\n");
+                confirmation.append("  ").append(i + 1).append(". ");
+                confirmation.append(chips.get(i).getDescription());
+                confirmation.append(" - $").append(String.format("%.2f", chips.get(i).getPrice()));
+                confirmation.append("\n");
             }
-            receipt.append("Chips subtotal: $").append(String.format("%.2f", getChipsTotal())).append("\n\n");
+            confirmation.append("Chips subtotal: $").append(String.format("%.2f", getChipsTotal())).append("\n\n");
         }
 
-        // Drinks section
         if (!drinks.isEmpty()) {
-            receipt.append("DRINKS:\n");
+            confirmation.append("DRINKS:\n");
             for (int i = 0; i < drinks.size(); i++) {
-                receipt.append("  ").append(i + 1).append(". ");
-                receipt.append(drinks.get(i).getDisplay());
-                receipt.append(" - $").append(String.format("%.2f", drinks.get(i).getPrice()));
-                receipt.append("\n");
+                confirmation.append("  ").append(i + 1).append(". ");
+                confirmation.append(drinks.get(i).getDescription());
+                confirmation.append(" - $").append(String.format("%.2f", drinks.get(i).getPrice()));
+                confirmation.append("\n");
             }
-            receipt.append("Drinks subtotal: $").append(String.format("%.2f", getDrinksTotal())).append("\n\n");
+            confirmation.append("Drinks subtotal: $").append(String.format("%.2f", getDrinksTotal())).append("\n\n");
         }
 
-        receipt.append("========================================\n");
-        receipt.append("TOTAL ORDER: $").append(String.format("%.2f", getTotalPrice()));
+        confirmation.append("==========================================\n");
+        confirmation.append("TOTAL ORDER: $").append(String.format("%.2f", getTotalPrice())).append("\n");
+        confirmation.append("==========================================\n");
+        confirmation.append("\nDoes this look correct? (Y/N)");
 
-        return receipt.toString();
+        return confirmation.toString();
+    }
+
+    // Formatter integration method (simplified)
+    public String getDescription() {
+        return Formatter.getDescription(this);
+    }
+
+    // DETAILED RECEIPT METHOD
+    public String getDetailedReceipt() {
+        return Formatter.getDetailedReceipt(this);
     }
 
     @Override
@@ -192,5 +190,4 @@ public class Order {
         return getOrderSummary();
     }
 }
-
 

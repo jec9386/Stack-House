@@ -1,13 +1,15 @@
 package com.pluralsight;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Sandwich {
+public class Sandwich  {
     private SandwichSize size;
     private BreadType breadType;
-    private boolean toasted ;
+    private boolean toasted;
 
+    //create List field- have ability to hold more than one selection.
     private List<Meat> meats;
     private List<Meat> extraMeats;
     private List<Cheese> cheeses;
@@ -21,17 +23,21 @@ public class Sandwich {
         this.size = size;
         this.breadType = breadType;
         this.toasted = false;
-        this.meats = new ArrayList<>();
+        this.meats = new ArrayList<>();//create empty arrays in preparation to hold selections
         this.extraMeats = new ArrayList<>();
         this.cheeses = new ArrayList<>();
         this.extraCheeses = new ArrayList<>();
         this.regularToppings = new ArrayList<>();
         this.sauces = new ArrayList<>();
-
     }
+    //---Getter-------------------------------------------------------------
+    public SandwichSize getSize() { return size; }
+    public BreadType getBreadType() { return breadType; }
+    public boolean isToasted() { return toasted; }
+    public double getPrice() { return calculateTotalPrice(); }// gets return value of calculateTotalPrice()
 
 
-    //----Methods to add topping---------------------------------------------------------------
+    //----Methods to modify/add topping to the Sandwich---------------------------------------------------------------
     public void addMeat(Meat meat) {
         meats.add(meat);
     }
@@ -56,14 +62,75 @@ public class Sandwich {
         sauces.add(sauce);
     }
 
+    //---Getter to return copy of added topping for viewing and receipt printing---------------------------------------------------------------
+
+    public List<Meat> getMeats() {
+        return new ArrayList<>(meats);
+    }
+
+    public List<Meat> getExtraMeats() {
+        return new ArrayList<>(extraMeats);
+    }
+
+    public List<Cheese> getCheeses() {
+        return new ArrayList<>(cheeses);
+    }
+
+    public List<Cheese> getExtraCheeses() {
+        return new ArrayList<>(extraCheeses);
+    }
+
+    public List<RegularTopping> getRegularToppings() {
+        return new ArrayList<>(regularToppings);
+    }
+
+    public List<Sauce> getSauces() {
+        return new ArrayList<>(sauces);
+    }
+    //---Setter methods for customization---------------------------------------------------------------
     public void setToasted(boolean toasted) {
         this.toasted = toasted;
     }
+    public void setSize(SandwichSize size) {
+        this.size = size;
+    }
 
+    public void setBreadType(BreadType breadType) {
+        this.breadType = breadType;
+    }
+
+    //---Methods to remove toppings---------------------------------------------------------------
+
+    public void removeMeat(Meat meat) {
+        meats.remove(meat);
+    }
+
+    public void removeExtraMeat(Meat meat) {
+        extraMeats.remove(meat);
+    }
+
+    public void removeCheese(Cheese cheese) {
+        cheeses.remove(cheese);
+    }
+
+    public void removeExtraCheese(Cheese cheese) {
+        extraCheeses.remove(cheese);
+    }
+
+    public void removeRegularTopping(RegularTopping topping) {
+        regularToppings.remove(topping);
+    }
+
+    public void removeSauce(Sauce sauce) {
+        sauces.remove(sauce);
+    }
+
+
+//-------CALCULATIONS-----------------------------------------------------------------------------------------------
     //---Method to calculate total price of add ons-----------------------------------------------------------------
     private double calculateTotalPrice() {
         double[] basePrices = {5.50, 7.00, 8.50}; // 4", 8", 12"
-        double total = basePrices[size.getPriceIndex()];
+        double total = basePrices[size.getPriceIndex()];//start with initial value- cost of size chosen.
 
         for (Meat meat : meats) {
             total += meat.getPrice(size);
@@ -82,100 +149,22 @@ public class Sandwich {
         }
 
         return total;
-
     }
 
-    //---Getter-------------------------------------------------------------
-    public SandwichSize getSize() { return size; }
-    public BreadType getBreadType() { return breadType; }
-    public boolean isToasted() { return toasted; }
-    public double getPrice() { return calculateTotalPrice(); }
 
-    //---Method to get description for sandwich---------------------------------------------
+
+    //---Method to get description for sandwich-------------------------------------------------------------------------
 
     public String getDescription() {
-        StringBuilder description = new StringBuilder();
-        description.append(size.getDisplay()).append(" ");
-        description.append(breadType.getDisplay()).append(" sandwich");
-
-        if (toasted) {
-            description.append(" (Toasted)");
-        }
-
-        return description.toString();
+        return Formatter.getBasicDescription(this);
     }
 
-    //---Detailed Description with all the toppings---------------------------------------
     public String getDetailedDescription() {
-        StringBuilder detailedDescrip = new StringBuilder();
-        detailedDescrip.append(getDescription()).append("\n");
-
-        // Add meats
-        if (!meats.isEmpty()) {
-            detailedDescrip.append("Meats: ");
-            for (int i = 0; i < meats.size(); i++) {
-                detailedDescrip.append(meats.get(i).getDisplay());
-                if (i < meats.size() - 1) detailedDescrip.append(", ");
-            }
-            detailedDescrip.append("\n");
-        }
-
-        // Add extra meats
-        if (!extraMeats.isEmpty()) {
-            detailedDescrip.append("Extra Meats: ");
-            for (int i = 0; i < extraMeats.size(); i++) {
-                detailedDescrip.append(extraMeats.get(i).getDisplay());
-                if (i < extraMeats.size() - 1) detailedDescrip.append(", ");
-            }
-            detailedDescrip.append("\n");
-        }
-
-        // Add cheeses
-        if (!cheeses.isEmpty()) {
-            detailedDescrip.append("Cheese: ");
-            for (int i = 0; i < cheeses.size(); i++) {
-                detailedDescrip.append(cheeses.get(i).getDisplay());
-                if (i < cheeses.size() - 1) detailedDescrip.append(", ");
-            }
-            detailedDescrip.append("\n");
-        }
-
-        // Add extra cheeses
-        if (!extraCheeses.isEmpty()) {
-            detailedDescrip.append("Extra Cheese: ");
-            for (int i = 0; i < extraCheeses.size(); i++) {
-                detailedDescrip.append(extraCheeses.get(i).getDisplay());
-                if (i < extraCheeses.size() - 1) detailedDescrip.append(", ");
-            }
-            detailedDescrip.append("\n");
-        }
-
-        // Add regular toppings
-        if (!regularToppings.isEmpty()) {
-            detailedDescrip.append("Toppings: ");
-            for (int i = 0; i < regularToppings.size(); i++) {
-                detailedDescrip.append(regularToppings.get(i).getDisplay());
-                if (i < regularToppings.size() - 1) detailedDescrip.append(", ");
-            }
-            detailedDescrip.append("\n");
-        }
-
-        // Add sauces
-        if (!sauces.isEmpty()) {
-            detailedDescrip.append("Sauces: ");
-            for (int i = 0; i < sauces.size(); i++) {
-                detailedDescrip.append(sauces.get(i).getDisplay());
-                if (i < sauces.size() - 1) detailedDescrip.append(", ");
-            }
-            detailedDescrip.append("\n");
-        }
-
-        return detailedDescrip.toString();
+        return Formatter.getDetailedDescription(this);
     }
 
     @Override
     public String toString() {
         return getDescription() + " - $" + String.format("%.2f", getPrice());
     }
-
 }

@@ -1,6 +1,6 @@
 package com.pluralsight;
 
-public enum RegularTopping {
+public enum RegularTopping implements Displayable{
     LETTUCE("Lettuce"),
     PEPPERS("Peppers"),
     ONIONS("Onions"),
@@ -13,10 +13,12 @@ public enum RegularTopping {
 
     private final String display;
 
+    //---Constructor------------------------------------
     RegularTopping(String display) {
         this.display = display;
     }
 
+    //---Getter--------------------------------------------
     public String getDisplay() {
         return display;
     }

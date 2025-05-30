@@ -8,7 +8,13 @@ public class Formatter {
     public static String getBasicDescription(Sandwich sandwich) {
         StringBuilder description = new StringBuilder();//able to continue to add String onto this
 
-        description.append("Custom- ");
+        if (sandwich instanceof SignatureSandwich) {
+            SignatureSandwich s = (SignatureSandwich) sandwich;
+            description.append(s.getSignatureName());
+            description.append(" - ");
+        } else {
+            description.append("Custom- ");
+        }
 
         // Add sandwich size
         description.append(sandwich.getSize().getDisplay());
