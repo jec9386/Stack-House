@@ -91,14 +91,17 @@ A Java console application that simulates a sandwich shop's- point-of-sale syste
 
 ### Creating an Order
 ![Screenshot](images/Screenshot%202025-05-30%20060852.png)
+
 1. **Start New Order** - Enter customer name
 
    
 ![Screenshot](images/Screenshot%202025-05-30%20060956.png)
+
 2. **Build Sandwich** - Choose size, bread, and toppings with guided prompts
 
 
 ![Screenshot](images/Screenshot%202025-05-30%20060956.png)
+
 6. **Review Order** - View detailed receipt
 7. **Checkout** - Complete the order
 ### Sample Receipt
@@ -106,6 +109,7 @@ A Java console application that simulates a sandwich shop's- point-of-sale syste
 
 
 ## Development Process (Diagram)
+
 ![Screenshot](images/Screenshot%202025-05-30%20060736.png)
 
 
