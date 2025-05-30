@@ -89,30 +89,29 @@ A Java console application that simulates a sandwich shop's- point-of-sale syste
 
 
 
-### Creating an Order
-![Screenshot](images/Screenshot%202025-05-30%20060852.png)
+## Creating an Order
 
-1. **Start New Order** - Enter customer name
+![Order Creation](images/Screenshot%202025-05-30%20060852.png)
 
-   
-![Screenshot](images/Screenshot%202025-05-30%20060956.png)
+### 1. Start New Order
+Enter customer name to begin the ordering process.
 
-2. **Build Sandwich** - Choose size, bread, and toppings with guided prompts
+![Sandwich Building](images/Screenshot%202025-05-30%20060956.png)
 
+### 2. Build Sandwich
+Choose size, bread, and toppings with guided prompts through our intuitive interface.
 
-![Screenshot](images/Screenshot%202025-05-30%20060956.png)
+### 3. Review Order
+View detailed receipt with itemized pricing and order summary.
 
-6. **Review Order** - View detailed receipt
-7. **Checkout** - Complete the order
-### Sample Receipt
-![Screenshot](images/Screenshot%202025-05-30%20061104.png)
+### 4. Checkout
+Complete the order and generate receipt file.
 
+## Sample Receipt
+![Sample Receipt](images/Screenshot%202025-05-30%20061104.png)
 
-## Development Process (Diagram)
-
-![Screenshot](images/Screenshot%202025-05-30%20060736.png)
-
-
+## Development Process
+![Development Diagram](images/Screenshot%202025-05-30%20060736.png)
 
 
 ## Code Structure
